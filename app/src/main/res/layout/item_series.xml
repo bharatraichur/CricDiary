@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="series"
+            type="com.codebhar.cricdiary.database.CricSeriesData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/base_spacing_unit_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/base_spacing_unit_1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/seriesName"
+                android:layout_width="@dimen/base_spacing_unit_zero"
+                android:layout_height="wrap_content"
+                android:text="@{series.name}"
+                tools:text="Indian Premier League"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/seriesTest"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/seriesStartDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:startDateToText="@{series.startDate}"
+                tools:text="31-03-2023"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seriesName"
+                app:layout_constraintEnd_toStartOf="@id/seriesTest"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/seriesEndDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:startDate="@{series.startDate}"
+                app:endDate="@{series.endDate}"
+                tools:text="28-05-2023"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seriesStartDate"
+                app:layout_constraintEnd_toStartOf="@id/seriesTest"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/base_spacing_unit_6"
+                android:layout_height="@dimen/base_spacing_unit_6"
+                android:id="@+id/seriesTest"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_ball"
+                tools:text="70"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginHorizontal="@dimen/base_spacing_unit_2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

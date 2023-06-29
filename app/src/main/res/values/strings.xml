@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CricDiary</string>
+    <string name="series">Series</string>
+    <string name="matches">Matches</string>
+    <string name="starts">Starts %s</string>
+    <string name="started_on">Started on %s</string>
+    <string name="ends">Ends %s</string>
+    <string name="ended_on">Ended on %s</string>
+    <string name="versus">vs</string>
+    <string name="team_score">%d/%d</string>
+    <string name="live">LIVE</string>
+    <string name="completed">Completed</string>
+</resources>

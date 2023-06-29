@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cric_nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.codebhar.cricdiary.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_matchesFragment"
+            app:destination="@id/matchesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.codebhar.cricdiary.series.SeriesFragment"
+        android:label="SeriesFragment" />
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.codebhar.cricdiary.matches.MatchesFragment"
+        android:label="MatchesFragment" />
+</navigation>

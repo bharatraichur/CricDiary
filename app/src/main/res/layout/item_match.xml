@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="matches"
+            type="com.codebhar.cricdiary.database.CricMatchesData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/base_spacing_unit_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/base_spacing_unit_1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/matchLiveIcon"
+                liveMatch="@{matches.matchStarted &amp;&amp; !matches.matchEnded}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/base_spacing_unit_min"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/t_description_small"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/guidelineHorizontalTop"
+                app:layout_constraintEnd_toEndOf="@id/guidelineVerticalStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/matchName"
+                android:layout_width="@dimen/base_spacing_unit_zero"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                android:text="@{matches.name}"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/guidelineVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineVerticalStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/team1Img"
+                imageUrl="@{matches.team1img}"
+                android:layout_width="@dimen/base_spacing_unit_6"
+                android:layout_height="@dimen/base_spacing_unit_6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineVerticalStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/matchName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/team1"
+                teamName="@{matches.team1Name}"
+                teamShortName="@{matches.team1ShortName}"
+                android:layout_width="@dimen/base_spacing_unit_zero"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/guidelineVerticalCenter"
+                app:layout_constraintStart_toEndOf="@id/guidelineVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/guidelineHorizontalTop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/team1Score"
+                runs="@{matches.team1Inning1Runs}"
+                wickets="@{matches.team1Inning1Wickets}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                app:layout_constraintBottom_toTopOf="@id/guidelineHorizontalBottom"
+                app:layout_constraintEnd_toStartOf="@id/guidelineVerticalCenter"
+                app:layout_constraintStart_toEndOf="@id/guidelineVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/team1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/matchVersus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                android:text="@string/versus"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineHorizontalTop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/team2"
+                teamName="@{matches.team2Name}"
+                teamShortName="@{matches.team2ShortName}"
+                android:layout_width="@dimen/base_spacing_unit_zero"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/guidelineVerticalEnd"
+                app:layout_constraintStart_toEndOf="@id/guidelineVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/guidelineHorizontalTop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/team2Score"
+                runs="@{matches.team2Inning1Runs}"
+                wickets="@{matches.team2Inning1Wickets}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                app:layout_constraintBottom_toTopOf="@id/guidelineHorizontalBottom"
+                app:layout_constraintEnd_toStartOf="@id/guidelineVerticalEnd"
+                app:layout_constraintStart_toEndOf="@id/guidelineVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/team2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/team2Img"
+                imageUrl="@{matches.team2img}"
+                android:layout_width="@dimen/base_spacing_unit_6"
+                android:layout_height="@dimen/base_spacing_unit_6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guidelineVerticalEnd"
+                app:layout_constraintTop_toBottomOf="@id/matchName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/matchStatus"
+                android:layout_width="@dimen/base_spacing_unit_zero"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_spacing_unit_1"
+                android:text="@{matches.status}"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guidelineVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/guidelineHorizontalBottom" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVerticalCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVerticalStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVerticalEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.85" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHorizontalTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHorizontalBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

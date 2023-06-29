@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codebhar.cricdiary.matches.MatchesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".matches.MatchesFragment">
+
+        <ProgressBar
+            android:id="@+id/matchesProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCenterMatches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/currentMatchesList"
+            android:layout_width="@dimen/base_spacing_unit_zero"
+            android:layout_height="@dimen/base_spacing_unit_zero"
+            android:layout_margin="@dimen/base_spacing_unit_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:listMatchesData="@{viewModel.currentMatchesData}" />
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recentMatchesList"-->
+<!--            android:layout_width="@dimen/base_spacing_unit_zero"-->
+<!--            android:layout_height="@dimen/base_spacing_unit_zero"-->
+<!--            android:layout_margin="@dimen/base_spacing_unit_1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/guidelineCenterMatches"-->
+<!--            app:listMatchesData="@{viewModel.recentMatchesData}" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
